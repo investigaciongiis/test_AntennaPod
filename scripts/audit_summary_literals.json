@@ -1,0 +1,25 @@
+{
+  "app_metadata": {
+    "Name": "AntennaPod",
+    "Developer": "antennaPod.org",
+    "Category": "AntennaPod",
+    "Supported platforms": "Android (SDK 19-33+)",
+    "Version": "3.11.4",
+    "Last update": "24/06/2026",
+    "Compatible idioms": "English",
+    "Source": "Open source",
+    "License": "MPL-2.0",
+    "Main language": "Java + Kotlin + XML"
+  },
+  "actors": {
+    "Auditor": "Juan José López Jiménez",
+    "Requirement Engineering team": [
+      "Juan José López Jiménez"
+    ],
+    "Engineering Group (EN)": [
+      "Juan José López Jiménez"
+    ]
+  },
+  "header_text": "mSEC Audit Summary — AntennaPod",
+  "cover_page_text": "AntennaPod — v3.11.4"
+}
