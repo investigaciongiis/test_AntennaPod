@@ -5,6 +5,10 @@ plugins {
 apply from: "../common.gradle"
 apply from: "../playFlavor.gradle"
 
+def secret = { name ->
+    return project.findProperty(name) ?: System.getenv(name)
+}
+
 android {
     namespace "de.danoeh.antennapod"
 
@@ -20,10 +24,10 @@ android {
         releaseConfig {
             enableV1Signing true
             enableV2Signing true
-            storeFile file(project.getProperties().getOrDefault("releaseStoreFile", "keystore"))
-            storePassword project.getProperties().getOrDefault("releaseStorePassword", "password")
-            keyAlias project.getProperties().getOrDefault("releaseKeyAlias", "alias")
-            keyPassword project.getProperties().getOrDefault("releaseKeyPassword", "password")
+            storeFile file(secret("ANDROID_KEYSTORE_BASE64") ?: "keystore")
+            storePassword secret("KEYSTORE_PASSWORD")
+            keyAlias secret("KEYSTORE_ALIAS_NAME")
+            keyPassword secret("KEYSTORE_ALIAS_PASS")
         }
     }
 
